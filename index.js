@@ -12,7 +12,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  console.log(res);
+  console.log(req);
+  res.send('completed')
 });
 
 app.listen(3000, () => console.log('Gator app listening on port 3000!'));

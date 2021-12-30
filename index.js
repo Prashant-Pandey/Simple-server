@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-// const resFile = require('./res.json');
+require('dotenv').config()
 
 const app = express();
 
@@ -12,8 +12,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  console.log(req);
+  console.log(req.body);
   res.send('completed')
 });
 
-app.listen(3000, () => console.log('Gator app listening on port 3000!'));
+app.listen(process.env.PORT, () => console.log('Gator app listening on port 3000!'));
